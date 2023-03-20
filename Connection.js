@@ -2,9 +2,10 @@ import {Sequelize} from 'sequelize'
 const sequelize = new Sequelize('masjid', 'admin', 'dSzYiSWh', {
   host : 'mysql-116579-0.cloudclusters.net',
   port : 19672,
-  dialect : 'mariadb',
+  dialect : 'mysql',
   dialectOptions: {
-    useUTC: false //for reading from database
+    // useUTC: false //for reading from database
+    useUTC: false
   },
   timezone: '+08:00' //for writing to database
 });
