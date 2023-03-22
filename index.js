@@ -35,9 +35,9 @@ app.use((req, res) => {
 })
 
 app.listen(port, async () => {
-  // await Akun.sync()
-  // await Blok.sync()
-  // await DetailBlok.sync()
-  // await Keluarga.sync()
-  // await Sumbangan.sync()
+  await Akun.sync()
+  await Blok.sync()
+  await DetailBlok.sync()
+  await Keluarga.sync()
+  await Sumbangan.sync()
 }); 
