@@ -27,12 +27,12 @@ app.use(express.json());
 app.use(compression());
 app.use(express.static(path.join(__dirname, 'assets')));
 app.use('/api', apiRouter);
-// app.use('/assets', express.static(path.join(__dirname, 'assets')));
+app.use('/assets', express.static(path.join(__dirname, 'assets')));
 
 
-// app.use((req, res) => {
-//   res.sendFile(path.join(__dirname, 'index.html'));
-// })
+app.use((req, res) => {
+  res.sendFile(path.join(__dirname, 'index.html'));
+})
 
 app.listen(port, async () => {
   // await Akun.sync()
