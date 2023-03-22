@@ -14,7 +14,8 @@ function handleUndefinedAuthorizationHeader(req, res, next) {
     res
       .status(401)
       .json({
-        message: "Tidak ada Token"
+        message: "Tidak ada Token",
+        path: req.path
       })
       return;
   }

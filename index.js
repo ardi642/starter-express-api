@@ -5,6 +5,11 @@ import cookieParser from "cookie-parser";
 import path from "path";
 import { fileURLToPath } from "url";
 import compression from "compression";
+import Akun from "./models/Akun.js";
+import Blok from "./models/Blok.js";
+import DetailBlok from "./models/DetailBlok.js";
+import Keluarga from "./models/Keluarga.js";
+import Sumbangan from "./models/Sumbangan.js";
 
 const app = express();
 const port = 3000;
@@ -30,9 +35,9 @@ app.use((req, res) => {
 })
 
 app.listen(port, async () => {
-  // await Akun.sync()
-  // await Blok.sync()
-  // await DetailBlok.sync()
-  // await Keluarga.sync()
-  // await Sumbangan.sync()
+  await Akun.sync()
+  await Blok.sync()
+  await DetailBlok.sync()
+  await Keluarga.sync()
+  await Sumbangan.sync()
 }); 
