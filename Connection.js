@@ -1,6 +1,7 @@
 import {Sequelize} from 'sequelize'
-const sequelize = new Sequelize('masjid', 'root', '', {
-  host : '127.0.0.1',
+const sequelize = new Sequelize('masjid_smokemass', 'masjid_smokemass', '5808288bf56424b463c971af1732cf4d50c29e70', {
+  host : 'vx7.h.filess.io',
+  port : 3305,
   dialect : 'mariadb',
   dialectOptions: {
     useUTC: false //for reading from database
