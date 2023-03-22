@@ -17,7 +17,6 @@ import { Op } from 'sequelize';
 dotenv.config();
 const tokenSecret = process.env.TOKEN_SECRET;
 
-
 const apiRouter = express.Router();
 apiRouter.all('/*', authorizationMiddleware);
 apiRouter.post('/login', async function (req, res)  {
@@ -58,11 +57,12 @@ apiRouter.post('/login', async function (req, res)  {
   }
   dataAkun = dataAkun.dataValues;
   delete dataAkun['password'];
-
+  
   const accessToken = jwt.sign(dataAkun, tokenSecret, {
     expiresIn: "14d"  // 14 hari
   });
   const decoded = jwt.verify(accessToken, tokenSecret);
+  
   res
   .status(200)
   .cookie('jwt', accessToken, {
