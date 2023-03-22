@@ -7,6 +7,7 @@ dotenv.config();
 const tokenSecret = process.env.TOKEN_SECRET;
 
 function handleUndefinedAuthorizationHeader(req, res, next) {
+  console.log(req)
   if (req.path == "/login") return next('route');
   if (req.path == "/token") return next('route');
   let authorizationHeader = req.get("Authorization");
